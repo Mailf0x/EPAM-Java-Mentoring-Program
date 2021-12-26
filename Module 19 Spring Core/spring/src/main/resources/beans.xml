@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+    <util:map id="testEvent" map-class="java.util.HashMap"
+              key-type="java.lang.String" value-type="java.lang.String">
+        <entry key="id" value="1"/>
+        <entry key="title" value="Test Event"/>
+        <entry key="date" value="1.1.2021"/>
+    </util:map>
+    <util:map id="testTicket" map-class="java.util.HashMap"
+              key-type="java.lang.String" value-type="java.lang.String">
+        <entry key="id" value="1"/>
+        <entry key="eventId" value="1"/>
+        <entry key="userId" value="1"/>
+        <entry key="category" value="STANDARD"/>
+        <entry key="place" value="1"/>
+    </util:map>
+    <util:map id="testUser" map-class="java.util.HashMap"
+              key-type="java.lang.String" value-type="java.lang.String">
+        <entry key="id" value="1"/>
+        <entry key="name" value="Test Name"/>
+        <entry key="email" value="user@test.com"/>
+    </util:map>
+    <util:map id="storage" map-class="java.util.HashMap"
+              key-type="java.lang.String" value-type="java.util.HashMap">
+        <entry key="event:1" value-ref="testEvent"/>
+        <entry key="user:1" value-ref="testUser"/>
+        <entry key="ticket:1" value-ref="testTicket"/>
+    </util:map>
+    <bean id="eventServiceImpl" class="implementation.EventServiceImpl">
+        <constructor-arg name="storage" ref="storage"/>
+    </bean>
+    <bean id="ticketServiceImpl" class="implementation.TicketServiceImpl">
+        <constructor-arg name="storage" ref="storage"/>
+    </bean>
+    <bean id="userServiceImpl" class="implementation.UserServiceImpl">
+        <constructor-arg name="storage" ref="storage"/>
+    </bean>
+    <bean id="bookingFacadeImpl" class="implementation.BookingFacadeImpl">
+        <constructor-arg name="eventService" ref="eventServiceImpl"/>
+        <constructor-arg name="ticketService" ref="ticketServiceImpl"/>
+        <constructor-arg name="userService" ref="userServiceImpl"/>
+    </bean>
+</beans>

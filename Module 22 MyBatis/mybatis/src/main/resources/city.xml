@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.epam.mybatis.mapper.CityMapper">
+    <select id="selectAll" resultType="List">
+        select * from world.city
+    </select>
+    <select id="selectById" resultType="City">
+        select * from world.city where id=${id}
+    </select>
+    <insert id="insert">
+        insert into world.city (id,name,countryCode,district,population)
+        values (#{id},#{name},#{countryCode},#{district},#{population})
+    </insert>
+    <update id="update">
+        update world.city set
+        name=#{name}
+        countryCode=#{countryCode}
+        district=#{district}
+        population=#{population}
+        where id={#id}
+    </update>
+    <delete id="delete">
+        delete from world.city where id=#{id}
+    </delete>
+</mapper>

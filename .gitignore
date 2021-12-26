@@ -1,0 +1,9 @@
+/Module 3 Build Tools/builders/admin/target/*
+/Module 3 Build Tools/builders/services/target/*
+/Module 3 Build Tools/builders/utils/target/*
+/Module 3 Build Tools/builders/web/target/*
+
+/Module 3 Build Tools/builders/admin/build/*
+/Module 3 Build Tools/builders/services/build/*
+/Module 3 Build Tools/builders/utils/build/*
+/Module 3 Build Tools/builders/web/build/*

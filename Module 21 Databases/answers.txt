@@ -1,0 +1,77 @@
+Give the most suitable term for the definition: a single data item
+Entry
+
+Give the most suitable term for the definition: a named set of data values of a particular type, one value for each row
+Column
+
+Give the most suitable term for the definition: a set of rows that have the same columns
+Table
+
+Give the most suitable term for the definition: the marker to indicate that a data value does not exist in a database
+NULL
+
+Give the most suitable term for the definition: a column or set of columns which helps to identify a row in a table
+A primary key
+
+Give the most suitable term for the definition: a generated key with no business meaning
+A surrogate key
+
+Give the most suitable term for the definition: a key from data that exists outside the database
+A natural key
+
+Give the most suitable term for the definition: any column or set of columns which can uniquely identify a row within a table
+A candidate key
+
+Give the most suitable term for the definition: a column or set of columns which uniquely identifies a row within a table
+A primary key
+
+Give the most suitable term for the definition: candidate keys except for the primary key
+???
+
+Give the most suitable term for the definition: a column which can contain only unique values and NULL
+UNIQUE
+
+Give the most suitable term for the definition: a key that consists of two or more columns
+A composite key
+
+Give the most suitable term for the definition: a column in a table that matches the primary key (or alternate key) of another table
+A foreign key
+
+Give the most suitable term for the definition: a logical connection between different tables
+A common attribute
+
+Give the most suitable term for the definition: relation databases concept, that any foreign key in a table can only contain either NULL or values from a primary key (or an alternate key) of another table
+Referential integrity
+
+Give the most suitable term for the definition: restriction of possible values for a column
+CHECK
+
+Give the most suitable term for the definition: a data structure that improves the speed of data reading on a table at the cost of additional data writing and storage space
+A database index
+
+Give the most suitable term for the definition: a database access language
+???
+
+Give the most suitable term for the definition: language type used to write in database stored procedures, user-defined functions, and triggers
+Structured Query Language
+
+Give the most suitable term for the definition: process of structuring a database in order to reduce data redundancy and to improve data integrity
+Database normalization
+
+Give the most suitable term for the definition: process of adding redundant data to a previously-normalized database in order to increase performance
+Database denormalization
+
+Give the most suitable term for the definition: a logical unit of work within a database that is independently executed for data reading or writing
+A transaction
+
+Give the most suitable term for the definition: guarantee that a series of database operations inside a transaction can either succeeds completely or fails completely
+Atomicity
+
+Give the most suitable term for the definition: guarantee that a transaction can only bring a database from one valid state to another
+Consistency
+
+Give the most suitable term for the definition: guarantee that concurrent execution of transactions leaves a database in the same state that would have been obtained if the transactions were executed sequentially
+Isolation
+
+Give the most suitable term for the definition: guarantee that once a transaction has been committed, it will remain committed even in the case of a system failure
+Durability

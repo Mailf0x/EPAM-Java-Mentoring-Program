@@ -1,0 +1,47 @@
+-- Select countries in Antarctica continent
+-- SELECT * FROM world.country WHERE Continent='Antarctica';
+-- Select countries without capital
+-- SELECT * FROM world.country WHERE Capital IS NULL;
+-- Select distinct continents
+-- SELECT DISTINCT Continent FROM world.country;
+-- Select top 10 countries by life expectancy, ordered
+-- SELECT * FROM world.country ORDER BY LifeExpectancy DESC LIMIT 10;
+-- Select government forms that are used more than once, and their counts, ordered (use GROUP BY, HAVING, COUNT)
+-- SELECT GovernmentForm, COUNT(GovernmentForm) FROM world.country GROUP BY GovernmentForm HAVING COUNT(Code) > 1;
+-- Select country name, official languages (use JOIN ON)
+-- SELECT world.country.Name, world.countrylanguage.Language FROM world.country INNER JOIN world.countrylanguage ON world.country.Code=world.countrylanguage.CountryCode WHERE IsOfficial='T';
+-- Select country name, official languages (use WHERE)
+-- SELECT world.country.Name, world.countrylanguage.Language FROM world.country, world.countrylanguage WHERE world.country.Code=world.countrylanguage.CountryCode AND IsOfficial='T';
+-- Select country name, official languages (use query from countrylanguage table and subquery from country table in SELECT clause)
+-- ???
+-- Select count of countries
+-- SELECT COUNT(Code) FROM world.country;
+-- Select maximum life expectancy in Africa continent
+-- SELECT LifeExpectancy FROM world.country WHERE Continent='Africa' ORDER BY LifeExpectancy DESC LIMIT 1;
+-- Select minimum life expectancy in Europe continent
+-- SELECT LifeExpectancy FROM world.country WHERE Continent='Europe' AND LifeExpectancy IS NOT NULL ORDER BY LifeExpectancy ASC LIMIT 1;
+-- Select country and population for countries that have population more than average among all countries, order by population (use AVG aggregate function in a subquery in WHERE clause)
+-- SELECT Name, Population FROM world.country WHERE Population > (SELECT AVG(Population) FROM world.country);
+-- Select sum of populations from all countries
+-- SELECT SUM(Population) FROM world.country;
+-- Select countries that have English as the official language, ordered (use EXISTS and subquery SELECT 1 in WHERE clause)
+-- SELECT Name FROM world.country WHERE EXISTS (SELECT Language FROM world.countrylanguage WHERE );
+-- Select countries from the Baltic Assembly (use IN)
+-- SELECT Name FROM world.country WHERE Region IN (SELECT Region FROM world.country WHERE Region='Baltic Countries');
+-- Select countries that became independent in 19 century, ordered (use BETWEEN)
+-- ???
+-- SELECT Name FROM world.country WHERE IndepYear IS NOT NULL AND IndepYear BETWEEN 1800 AND 1900;
+-- Select countries that have fragment ‘Island’ in their name (use LIKE with % and _ wildcards)
+-- SELECT Name FROM world.country WHERE Name LIKE '%Island%';
+-- Select countries in Europe continent that have all languages as official (use ALL, use a query from country table and subquery from countrylanguage table)
+-- SELECT Name FROM world.country WHERE 'T' = ALL (SELECT IsOfficial FROM world.countrylanguage WHERE Code=CountryCode);
+-- Select distinct languages from countries in Europe continent ordered (use ANY, use a query from countrylanguage table and subquery from country table)
+-- ???
+-- Select 10 top countries by life expectancy and union with 10 top countries by GNP, ordered (use UNION, UNION ALL, show differences between them)
+-- (SELECT Name FROM world.country ORDER BY LifeExpectancy LIMIT 10) UNION SELECT Name FROM world.country ORDER BY GNP DESC LIMIT 10;
+-- Select country name, independency year, status (‘Independent’ if independency year presents, ‘Dependent’ otherwise) from countries in North America continent, order by independency year (use CASE, AS)
+-- SELECT Name, CASE WHEN IndepYear IS NOT NULL THEN IndepYear ELSE 'Dependent' END AS 'Status' FROM world.country WHERE Continent='North America' ORDER BY IndepYear;
+-- Order countries in Europe continent by percent of people that live in big cities (in inner SELECT use country.Population column as total population and subquery with SUM of city.Population as urban population; in outher SELECT calculate rural population as total population minus urban population, calculate percent of urban population to total population)
+-- ???
+-- Select current time and date (use NOW())
+-- SELECT NOW();
